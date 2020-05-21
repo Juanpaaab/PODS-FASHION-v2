@@ -1,4 +1,3 @@
-<!-- Add -->
 <div class="modal fade" id="addnew">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -24,38 +23,38 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="Nombre" class="col-sm-3 control-label">Nombre</label>
+                    <label for="name" class="col-sm-3 control-label">Nombre</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="Nombre" name="Nombre" required>
+                      <input type="text" class="form-control" id="name" name="name" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="Apellidos" class="col-sm-3 control-label">Apellidos</label>
+                    <label for="lastname" class="col-sm-3 control-label">Apellidos</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="Apellidos" name="Apellidos" required>
+                      <input type="text" class="form-control" id="lastname" name="lastname" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="Direccion" class="col-sm-3 control-label">Direccion</label>
+                    <label for="address" class="col-sm-3 control-label">Direccion</label>
 
                     <div class="col-sm-9">
-                      <textarea class="form-control" id="Direccion" name="Direccion"></textarea>
+                      <textarea class="form-control" id="address" name="address"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="Ciudad" class="col-sm-3 control-label">Ciudad</label>
+                    <label for="city" class="col-sm-3 control-label">Ciudad</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="Ciudad" name="Ciudad">
+                      <input type="text" class="form-control" id="city" name="city">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="Rol" class="col-sm-3 control-label">Rol</label>
+                    <label for="rol" class="col-sm-3 control-label">Rol</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="Rol" name="Rol">
+                      <input type="text" class="form-control" id="rol" name="rol">
                     </div>
                 </div>
             </div>
@@ -68,7 +67,6 @@
     </div>
 </div>
 
-<!-- Edit -->
 <div class="modal fade" id="edit">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -95,31 +93,31 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_nombre" class="col-sm-3 control-label">Nombre</label>
+                    <label for="edit_name" class="col-sm-3 control-label">Nombre</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_nombre" name="Nombre">
+                      <input type="text" class="form-control" id="edit_name" name="name">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_apellidos" class="col-sm-3 control-label">Apellidos</label>
+                    <label for="edit_lastname" class="col-sm-3 control-label">Apellidos</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_apellidos" name="Apellidos">
+                      <input type="text" class="form-control" id="edit_lastname" name="lastname">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_direccion" class="col-sm-3 control-label">Direccion</label>
+                    <label for="edit_address" class="col-sm-3 control-label">direccion</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_direccion" name="Direccion">
+                      <input type="text" class="form-control" id="edit_address" name="address">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_ciudad" class="col-sm-3 control-label">Ciudad</label>
+                    <label for="edit_city" class="col-sm-3 control-label">Ciudad</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_ciudad" name="Ciudad">
+                      <input type="text" class="form-control" id="edit_city" name="city">
                     </div>
                 </div>
                 </div>
@@ -132,7 +130,6 @@
     </div>
 </div>
 
-<!-- Delete -->
 <div class="modal fade" id="delete">
     <div class="modal-dialog">
         <div class="modal-content">

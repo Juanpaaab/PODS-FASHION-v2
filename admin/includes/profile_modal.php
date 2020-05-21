@@ -1,4 +1,3 @@
-<!-- Add -->
 <div class="modal fade" id="profile">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -24,17 +23,17 @@
                     </div>
                 </div>
                 <div class="form-group">
-                  	<label for="Nombre" class="col-sm-3 control-label">Nombre</label>
+                  	<label for="name" class="col-sm-3 control-label">Nombre</label>
 
                   	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="Nombre" name="Nombre" value="<?php echo $admin['Nombre']; ?>">
+                    	<input type="text" class="form-control" id="name" name="name" value="<?php echo $admin['name']; ?>">
                   	</div>
                 </div>
                 <div class="form-group">
-                  	<label for="Apellidos" class="col-sm-3 control-label">Apellidos</label>
+                  	<label for="lastname" class="col-sm-3 control-label">Apellidos</label>
 
                   	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="apellidos" name="Apellidos" value="<?php echo $admin['Apellidos']; ?>">
+                    	<input type="text" class="form-control" id="lastname" name="lastname" value="<?php echo $admin['lastname']; ?>">
                   	</div>
                 </div>
                 <hr>

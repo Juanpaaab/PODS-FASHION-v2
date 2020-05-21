@@ -1,4 +1,3 @@
-<!-- Eliminar -->
 <div class="modal fade" id="delete">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -24,7 +23,6 @@
     </div>
 </div>
 
-<!-- Editar -->
 <div class="modal fade" id="edit">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">

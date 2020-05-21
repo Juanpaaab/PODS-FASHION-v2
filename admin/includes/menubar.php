@@ -1,17 +1,14 @@
 <aside class="main-sidebar"  style="background-color: deeppink">
-  <!-- sidebar: style can be found in sidebar.less -->
   <section class="sidebar"  style="background-color: deeppink">
-    <!-- Sidebar user panel -->
     <div class="user-panel" >
       <div class="pull-left image">
         <img src="<?php echo (!empty($admin['photo'])) ? '../images/'.$admin['photo'] : '../images/profile.jpg'; ?>" class="img-circle" alt="User Image">
       </div>
       <div class="pull-left info">
-        <p><?php echo $admin['Nombre'].' '.$admin['Apellidos']; ?></p>
+        <p><?php echo $admin['name'].' '.$admin['lastname']; ?></p>
         <a><i class="fa fa-circle text-success"></i> En línea</a>
       </div>
     </div>
-    <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">  
       <li><a href="home.php" style="background-color: deeppink"><i class="fa fa-dashboard"></i> <span>Panel de control</span></a></li>
       <li class="header" style="background-color: deeppink; color: white">Administrar</li>
@@ -31,5 +28,4 @@
       </li>
     </ul>
   </section>
-  <!-- /.sidebar -->
 </aside>

@@ -18,16 +18,13 @@
   <?php include 'includes/navbar.php'; ?>
   <?php include 'includes/menubar.php'; ?>
 
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
         Panel de control
       </h1>
     </section>
 
-    <!-- Main content -->
     <section class="content">
       <?php
         if(isset($_SESSION['error'])){
@@ -51,11 +48,8 @@
           unset($_SESSION['success']);
         }
       ?>
-      <!-- Small boxes (Stat box) -->
       <div class="row">
-        <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
               <?php
@@ -73,13 +67,11 @@
             <a href="products.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
-        <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
           <div class="small-box bg-blue">
             <div class="inner">
               <?php
-                $stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM usuarios");
+                $stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM users");
                 $stmt->execute();
                 $urow =  $stmt->fetch();
 

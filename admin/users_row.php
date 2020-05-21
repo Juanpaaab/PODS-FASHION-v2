@@ -6,7 +6,7 @@
 		
 		$conn = $pdo->open();
 
-		$stmt = $conn->prepare("SELECT * FROM usuarios WHERE id_user=:id_user");
+		$stmt = $conn->prepare("SELECT * FROM users WHERE id_user=:id_user");
 		$stmt->execute(['id_user'=>$id_user]);
 		$row = $stmt->fetch();
 		$pdo->close();

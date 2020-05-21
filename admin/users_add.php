@@ -4,15 +4,15 @@
 	if(isset($_POST['add'])){
 		$email = $_POST['email'];
 		$password = $_POST['password'];
-		$nombre = $_POST['Nombre'];
-		$apellidos = $_POST['Apellidos'];
-		$direccion = $_POST['Direccion'];
-		$ciudad = $_POST['Ciudad'];
-		$rol = $_POST['Rol'];
+		$name = $_POST['name'];
+		$lastname = $_POST['lastname'];
+		$address = $_POST['address'];
+		$city = $_POST['city'];
+		$rol = $_POST['rol'];
 
 		$conn = $pdo->open();
 
-		$stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM usuarios WHERE email=:email");
+		$stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM users WHERE email=:email");
 		$stmt->execute(['email'=>$email]);
 		$row = $stmt->fetch();
 
@@ -27,8 +27,8 @@
 				move_uploaded_file($_FILES['photo']['tmp_name'], '../images/'.$filename);	
 			}
 			try{
-				$stmt = $conn->prepare("INSERT INTO usuarios (email, password, Nombre, Apellidos, Direccion, Ciudad, Rol) VALUES (:email, :password, :Nombre, :Apellidos, :Direccion, :Ciudad, :Rol)");
-				$stmt->execute(['email'=>$email, 'password'=>$password, 'Nombre'=>$nombre, 'Apellidos'=>$apellidos, 'Direccion'=>$direccion, 'Ciudad'=>$ciudad, 'Rol'=>$rol]);
+				$stmt = $conn->prepare("INSERT INTO users (email, password, name, lastname, address, city, rol) VALUES (:email, :password, :name, :lastname, :address, :city, :rol)");
+				$stmt->execute(['email'=>$email, 'password'=>$password, 'name'=>$name, 'lastname'=>$lastname, 'address'=>$address, 'city'=>$city, 'rol'=>$rol]);
 				$_SESSION['success'] = 'Usuario añadido correctamente';
 
 			}

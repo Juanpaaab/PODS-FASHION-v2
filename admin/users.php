@@ -6,16 +6,13 @@
   <?php include 'includes/navbar.php'; ?>
   <?php include 'includes/menubar.php'; ?>
 
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
         Usuarios
       </h1>
     </section>
 
-    <!-- Main content -->
     <section class="content">
       <?php
         if(isset($_SESSION['error'])){
@@ -58,8 +55,8 @@
                   <?php
                     $conn = $pdo->open();
                     try{
-                      $stmt = $conn->prepare("SELECT * FROM usuarios WHERE Rol=:Rol");
-                      $stmt->execute(['Rol'=> 0]);
+                      $stmt = $conn->prepare("SELECT * FROM users WHERE rol=:rol");
+                      $stmt->execute(['rol'=> 0]);
                       foreach($stmt as $row){
                         $image = (!empty($row['photo'])) ? '../images/'.$row['photo'] : '../images/profile.jpg';
                         echo "
@@ -68,7 +65,7 @@
                               <img src='".$image."' height='30px' width='30px'>
                             </td>
                             <td>".$row['email']."</td>
-                            <td>".$row['Nombre'].' '.$row['Apellidos']."</td>
+                            <td>".$row['name'].' '.$row['lastname']."</td>
                             <td>
                               <a href='cart.php?user=".$row['id_user']."' class='btn btn-info btn-sm btn-flat'><i class='fa fa-search'></i> Carrito</a>
                               <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id_user']."'><i class='fa fa-edit'></i> Editar</button>
@@ -96,7 +93,6 @@
     <?php include 'includes/users_modal.php'; ?>
 
 </div>
-<!-- ./wrapper -->
 
 <?php include 'includes/scripts.php'; ?>
 <script>

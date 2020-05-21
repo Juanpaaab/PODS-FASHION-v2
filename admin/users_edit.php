@@ -5,10 +5,10 @@
 		$id_user = $_POST['id_user'];
 		$email = $_POST['email'];
 		$password = $_POST['password'];
-		$nombre = $_POST['Nombre'];
-		$apellidos = $_POST['Apellidos'];
-		$direccion = $_POST['Direccion'];
-		$ciudad = $_POST['Ciudad'];
+		$name = $_POST['name'];
+		$lastname = $_POST['lastname'];
+		$address = $_POST['address'];
+		$city = $_POST['city'];
 
 		$conn = $pdo->open();
 		$stmt = $conn->prepare("SELECT * FROM usuarios WHERE id_user=:id_user");
@@ -23,8 +23,8 @@
 		}
 
 		try{
-			$stmt = $conn->prepare("UPDATE usuarios SET email=:email, password=:password, Nombre=:Nombre, Apellidos=:Apellidos, Direccion=:Direccion, Ciudad=:Ciudad WHERE id_user=:id_user");
-			$stmt->execute(['id_user'=>$id_user, 'email'=>$email, 'password'=>$password, 'Nombre'=>$nombre, 'Apellidos'=>$apellidos, 'Direccion'=>$direccion, 'Ciudad'=>$ciudad]);
+			$stmt = $conn->prepare("UPDATE usuarios SET email=:email, password=:password, name=:name, lastname=:lastname, address=:address, city=:city WHERE id_user=:id_user");
+			$stmt->execute(['id_user'=>$id_user, 'email'=>$email, 'password'=>$password, 'name'=>$name, 'lastname'=>$lastname, 'address'=>$address, 'city'=>$city]);
 			$_SESSION['success'] = 'Usuario actualizado correctamente';
 
 		}

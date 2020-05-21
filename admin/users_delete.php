@@ -7,7 +7,7 @@
 		$conn = $pdo->open();
 
 		try{
-			$stmt = $conn->prepare("DELETE FROM usuarios WHERE id_user=:id_user");
+			$stmt = $conn->prepare("DELETE FROM users WHERE id_user=:id_user");
 			$stmt->execute(['id_user'=>$id_user]);
 
 			$_SESSION['success'] = 'Usuario eliminado correctamente';

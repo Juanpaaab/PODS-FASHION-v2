@@ -1,4 +1,4 @@
-<!-- Descripción -->
+
 <div class="modal fade" id="description">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -17,7 +17,6 @@
     </div>
 </div>
 
-<!-- Añadir -->
 <div class="modal fade" id="addnew">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -73,7 +72,6 @@
     </div>
 </div>
 
-<!-- Actualizar foto -->
 <div class="modal fade" id="edit_photo">
     <div class="modal-dialog">
         <div class="modal-content">

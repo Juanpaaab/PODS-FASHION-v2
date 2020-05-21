@@ -14,16 +14,13 @@
   <?php include 'includes/navbar.php'; ?>
   <?php include 'includes/menubar.php'; ?>
 
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
         Lista de productos
       </h1>
     </section>
 
-    <!-- Main content -->
     <section class="content">
       <?php
         if(isset($_SESSION['error'])){
@@ -97,7 +94,6 @@
                       $stmt->execute();
                       foreach($stmt as $row){
                         $image = (!empty($row['photo'])) ? '../images/'.$row['photo'] : '../images/noimage.jpg';
-                        $counter = ($row['date_view'] == $now) ? $row['counter'] : 0;
                         echo "
                           <tr>
                             <td>".$row['name']."</td>
@@ -135,7 +131,6 @@
     <?php include 'includes/products_modal2.php'; ?>
 
 </div>
-<!-- ./wrapper -->
 
 <?php include 'includes/scripts.php'; ?>
 <script>

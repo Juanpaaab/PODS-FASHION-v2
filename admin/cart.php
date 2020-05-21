@@ -7,7 +7,7 @@
   else{
     $conn = $pdo->open();
 
-    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE id_user=:id_user");
+    $stmt = $conn->prepare("SELECT * FROM users WHERE id_user=:id_user");
     $stmt->execute(['id_user'=>$_GET['user']]);
     $user = $stmt->fetch();
 
@@ -22,16 +22,13 @@
   <?php include 'includes/navbar.php'; ?>
   <?php include 'includes/menubar.php'; ?>
 
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <?php echo 'Carrito de '.$user['Nombre'].' '.$user['Apellidos'] ?>
+        <?php echo 'Carrito de '.$user['name'].' '.$user['lastname'] ?>
       </h1>
     </section>
 
-    <!-- Main content -->
     <section class="content">
       <?php
         if(isset($_SESSION['error'])){
@@ -108,7 +105,6 @@
     <?php include 'includes/cart_modal.php'; ?>
 
 </div>
-<!-- ./wrapper -->
 
 <?php include 'includes/scripts.php'; ?>
 <script>
