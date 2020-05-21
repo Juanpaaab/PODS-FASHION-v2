@@ -26,7 +26,6 @@
 	  <div class="content-wrapper">
 	    <div class="container">
 
-	      <!-- Main content -->
 	      <section class="content">
 	        <div class="row">
 	        	<div class="col-sm-9">
@@ -68,9 +67,6 @@
 						$pdo->close();
 
 		       		?> 
-	        	</div>
-	        	<div class="col-sm-3">
-	        		<?php include 'includes/sidebar.php'; ?>
 	        	</div>
 	        </div>
 	      </section>

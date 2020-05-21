@@ -12,10 +12,9 @@
 		
 	}
 	catch(PDOException $e){
-		echo "There is some problem in connection: " . $e->getMessage();
+		echo "Hay un problema en la conexion: " . $e->getMessage();
 	}
 
-	//page view
 	$now = date('Y-m-d');
 	if($product['date_view'] == $now){
 		$stmt = $conn->prepare("UPDATE products SET counter=counter+1 WHERE id=:id");
@@ -43,9 +42,8 @@
 	<?php include 'includes/navbar.php'; ?>
 	 
 	  <div class="content-wrapper">
-	    <div class="container">
+	    <div class="container" style="margin-left: 300px">
 
-	      <!-- Main content -->
 	      <section class="content">
 	        <div class="row">
 	        	<div class="col-sm-9">
@@ -71,23 +69,20 @@
 							            </span>
 							            <input type="hidden" value="<?php echo $product['prodid']; ?>" name="id">
 							        </div>
-			            			<button type="submit" class="btn btn-primary btn-lg btn-flat"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+			            			<button type="submit" class="btn btn-primary btn-lg btn-flat"><i class="fa fa-shopping-cart"></i> Añadir al Carrito</button>
 			            		</div>
 		            		</form>
 		            	</div>
 		            	<div class="col-sm-6">
 		            		<h1 class="page-header"><?php echo $product['prodname']; ?></h1>
 		            		<h3><b>&#36; <?php echo number_format($product['price'], 2); ?></b></h3>
-		            		<p><b>Category:</b> <a href="category.php?category=<?php echo $product['cat_slug']; ?>"><?php echo $product['catname']; ?></a></p>
-		            		<p><b>Description:</b></p>
+		            		<p><b>Categoría:</b> <a href="category.php?category=<?php echo $product['cat_slug']; ?>"><?php echo $product['catname']; ?></a></p>
+		            		<p><b>Descripción:</b></p>
 		            		<p><?php echo $product['description']; ?></p>
 		            	</div>
 		            </div>
 		            <br>
 				    
-	        	</div>
-	        	<div class="col-sm-3">
-	        		<?php include 'includes/sidebar.php'; ?>
 	        	</div>
 	        </div>
 	      </section>

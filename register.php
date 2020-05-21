@@ -1,26 +1,24 @@
 <?php
-	use PHPMailer\PHPMailer\PHPMailer;
-	use PHPMailer\PHPMailer\Exception;
 
 	include 'includes/session.php';
 
 	if(isset($_POST['signup'])){
-		$nombre = $_POST['nombre'];
-		$apellidos = $_POST['apellidos'];
+		$name = $_POST['name'];
+		$lastname = $_POST['lastname'];
 		$email = $_POST['email'];
 		$password = $_POST['password'];
-		$direccion = $_POST['direccion'];
-		$ciudad = $_POST['ciudad'];
+		$address = $_POST['address'];
+		$city = $_POST['city'];
 
-		$_SESSION['nombre'] = $nombre;
-		$_SESSION['apellidos'] = $apellidos;
+		$_SESSION['name'] = $name;
+		$_SESSION['lastname'] = $lastname;
 		$_SESSION['email'] = $email;
 
 		$conn = $pdo->open();
 		$password = password_hash($password, PASSWORD_DEFAULT);
 		try{
-			$stmt = $conn->prepare("INSERT INTO usuarios (email, password, Nombre, Apellidos, Direccion, Ciudad) VALUES (:email, :password, :nombre, :apellidos, :direccion, :ciudad)");
-			$stmt->execute(['email'=>$email, 'password'=>$password, 'nombre'=>$nombre, 'apellidos'=>$apellidos, 'direccion'=>$direccion, 'ciudad'=>$ciudad]);
+			$stmt = $conn->prepare("INSERT INTO users (email, password, name, lastname, address, city) VALUES (:email, :password, :name, :lastname, :address, :city)");
+			$stmt->execute(['email'=>$email, 'password'=>$password, 'name'=>$name, 'lastname'=>$lastname, 'address'=>$address, 'city'=>$city]);
 			$userid = $conn->lastInsertId();
 			$pdo->close();
 			header('location: login.php');
@@ -28,7 +26,7 @@
 			echo 'Excepción capturada: ',  $e->getMessage(), "\n";
 		}
 	}else{
-		$_SESSION['error'] = 'Fill up signup form first';
+		$_SESSION['error'] = 'Llena el formulario primero';
 		header('location: signup.php');
 	}
 

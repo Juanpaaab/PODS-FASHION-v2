@@ -10,7 +10,7 @@
 		try{
 			$stmt = $conn->prepare("DELETE FROM cart WHERE id=:id");
 			$stmt->execute(['id'=>$id]);
-			$output['message'] = 'Deleted';
+			$output['message'] = 'Eliminado';
 			
 		}
 		catch(PDOException $e){
@@ -21,7 +21,7 @@
 		foreach($_SESSION['cart'] as $key => $row){
 			if($row['productid'] == $id){
 				unset($_SESSION['cart'][$key]);
-				$output['message'] = 'Deleted';
+				$output['message'] = 'Eliminado';
 			}
 		}
 	}

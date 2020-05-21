@@ -13,7 +13,6 @@
 	  <div class="content-wrapper">
 	    <div class="container">
 
-	      <!-- Main content -->
 	      <section class="content">
 	        <div class="row">
 	        	<div class="col-sm-9">
@@ -50,14 +49,14 @@
 	        							<h4>Ciudad:</h4>
 	        						</div>
 	        						<div class="col-sm-9">
-	        							<h4><?php echo $user['Nombre'].' '.$user['Apellidos']; ?>
+	        							<h4><?php echo $user['name'].' '.$user['lastname']; ?>
 	        								<span class="pull-right">
 	        									<a href="#edit" class="btn btn-success btn-flat btn-sm" data-toggle="modal"><i class="fa fa-edit"></i> Editar</a>
 	        								</span>
 	        							</h4>
 	        							<h4><?php echo $user['email']; ?></h4>
-	        							<h4><?php echo (!empty($user['Direccion'])) ? $user['Direccion'] : 'N/a'; ?></h4>
-	        							<h4><?php echo (!empty($user['Ciudad'])) ? $user['Ciudad'] : 'N/a'; ?></h4>
+	        							<h4><?php echo (!empty($user['address'])) ? $user['address'] : 'N/a'; ?></h4>
+	        							<h4><?php echo (!empty($user['city'])) ? $user['city'] : 'N/a'; ?></h4>
 	        						</div>
 	        					</div>
 	        				</div>

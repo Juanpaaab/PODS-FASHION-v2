@@ -9,12 +9,12 @@
 
 		try{
 
-			$stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM usuarios WHERE email = :email");
+			$stmt = $conn->prepare("SELECT *, COUNT(*) AS numrows FROM users WHERE email = :email");
 			$stmt->execute(['email'=>$email]);
 			$row = $stmt->fetch();
 			if($row['numrows'] > 0){
 					if(password_verify($password, $row['password'])){
-						if($row['Rol']){
+						if($row['rol']){
 							$_SESSION['admin'] = $row['id_user'];
 						}
 						else{	
