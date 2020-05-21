@@ -20,13 +20,6 @@
     <!-- Magnify -->
     <link rel="stylesheet" href="magnify/magnify.min.css">
 
-  	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  	<!--[if lt IE 9]>
-  	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  	<![endif]-->
-
   	<!-- Google Font -->
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
@@ -35,9 +28,7 @@
     <!-- Google Recaptcha -->
     <script src='https://www.google.com/recaptcha/api.js'></script>
 
-  	<!-- Custom CSS -->
     <style type="text/css">
-    /* Small devices (tablets, 768px and up) */
     @media (min-width: 768px){ 
       #navbar-search-input{ 
         width: 60px; 
@@ -47,7 +38,6 @@
       }
     }
 
-    /* Medium devices (desktops, 992px and up) */
     @media (min-width: 992px){ 
       #navbar-search-input{ 
         width: 150px; 
@@ -86,7 +76,6 @@
       width: 1.3em;
     }
 
-    /*Magnify*/
     .magnify > .magnify-lens {
       width: 100px;
       height: 100px;

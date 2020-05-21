@@ -10,12 +10,12 @@
 		$conn = $pdo->open();
 
 		try{
-			$stmt = $conn->prepare("SELECT * FROM usuarios WHERE id_user=:id_user");
+			$stmt = $conn->prepare("SELECT * FROM users WHERE id_user=:id_user");
 			$stmt->execute(['id_user'=>$_SESSION['user']]);
 			$user = $stmt->fetch();
 		}
 		catch(PDOException $e){
-			echo "There is some problem in connection: " . $e->getMessage();
+			echo "Hay un problema en la conexion: " . $e->getMessage();
 		}
 
 		$pdo->close();

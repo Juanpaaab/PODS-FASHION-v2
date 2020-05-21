@@ -15,20 +15,16 @@
 <script src="bower_components/ckeditor/ckeditor.js"></script>
 <script>
   $(function () {
-    // Datatable
     $('#example1').DataTable()
-    //CK Editor
     CKEDITOR.replace('editor1')
   });
 </script>
-<!--Magnify -->
 <script src="magnify/magnify.min.js"></script>
 <script>
 $(function(){
 	$('.zoom').magnify();
 });
 </script>
-<!-- Custom Scripts -->
 <script>
 $(function(){
   $('#navbar-search-input').focus(function(){

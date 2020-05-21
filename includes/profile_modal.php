@@ -1,4 +1,3 @@
-<!-- Transaction History -->
 <div class="modal fade" id="transaction">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -34,7 +33,6 @@
     </div>
 </div>
 
-<!-- Edit Profile -->
 <div class="modal fade" id="edit">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -46,17 +44,17 @@
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="profile_edit.php" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="Nombre" class="col-sm-3 control-label">Nombre</label>
+                    <label for="name" class="col-sm-3 control-label">Nombres</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="Nombre" name="Nombre" value="<?php echo $user['Nombre']; ?>">
+                      <input type="text" class="form-control" id="name" name="name" value="<?php echo $user['name']; ?>">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="Apellidos" class="col-sm-3 control-label">Apellidos</label>
+                    <label for="lastname" class="col-sm-3 control-label">Apellidos</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="Apellidos" name="Apellidos" value="<?php echo $user['Apellidos']; ?>">
+                      <input type="text" class="form-control" id="lastname" name="lastname" value="<?php echo $user['lastname']; ?>">
                     </div>
                 </div>
                 <div class="form-group">
@@ -74,17 +72,17 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="Direccion" class="col-sm-3 control-label">Direccion</label>
+                    <label for="address" class="col-sm-3 control-label">Direccion</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="Direccion" name="Direccion" value="<?php echo $user['Direccion']; ?>">
+                      <input type="text" class="form-control" id="address" name="address" value="<?php echo $user['address']; ?>">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="Ciudad" class="col-sm-3 control-label">Ciudad</label>
+                    <label for="city" class="col-sm-3 control-label">City</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="Ciudad" name="Ciudad" value="<?php echo $user['Ciudad']; ?>">
+                      <input type="text" class="form-control" id="city" name="city" value="<?php echo $user['city']; ?>">
                     </div>
                 </div>
                 

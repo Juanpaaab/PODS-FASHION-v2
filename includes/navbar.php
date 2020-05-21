@@ -8,7 +8,6 @@
         </button>
       </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
         <ul class="nav navbar-nav">
           <li><a href="index.php">INICIO</a></li>
@@ -46,12 +45,9 @@
           </div>
         </form>
       </div>
-      <!-- /.navbar-collapse -->
-      <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <li class="dropdown messages-menu">
-            <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-shopping-cart"></i>
               <span class="label label-success cart_count"></span>
@@ -71,7 +67,7 @@
                 <li class="dropdown user user-menu">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <img src="'.$image.'" class="user-image" alt="User Image">
-                    <span class="hidden-xs">'.$user['Nombre'].' '.$user['Apellidos'].'</span>
+                    <span class="hidden-xs">'.$user['name'].' '.$user['lastname'].'</span>
                   </a>
                   <ul class="dropdown-menu">
                     <!-- User image -->
@@ -79,7 +75,7 @@
                       <img src="'.$image.'" class="img-circle" alt="User Image">
 
                       <p>
-                        '.$user['Nombre'].' '.$user['Apellidos'].'
+                        '.$user['name'].' '.$user['lastname'].'
                       </p>
                     </li>
                     <li class="user-footer">
