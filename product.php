@@ -6,7 +6,7 @@
 
 	try{
 		 		
-	    $stmt = $conn->prepare("SELECT *, products.name AS prodname, category.name AS catname, products.id AS prodid FROM products LEFT JOIN category ON category.id=products.category_id WHERE slug = :slug");
+	    $stmt = $conn->prepare("SELECT *, products.name AS prodname, category.name AS catname, products.id AS prodid, products.Pquantity AS Pcantidad FROM products LEFT JOIN category ON category.id=products.category_id WHERE slug = :slug");
 	    $stmt->execute(['slug' => $slug]);
 	    $product = $stmt->fetch();
 		
@@ -15,15 +15,7 @@
 		echo "Hay un problema en la conexion: " . $e->getMessage();
 	}
 
-	$now = date('Y-m-d');
-	if($product['date_view'] == $now){
-		$stmt = $conn->prepare("UPDATE products SET counter=counter+1 WHERE id=:id");
-		$stmt->execute(['id'=>$product['prodid']]);
-	}
-	else{
-		$stmt = $conn->prepare("UPDATE products SET counter=1, date_view=:now WHERE id=:id");
-		$stmt->execute(['id'=>$product['prodid'], 'now'=>$now]);
-	}
+	
 
 ?>
 <?php include 'includes/header.php'; ?>
@@ -62,13 +54,14 @@
 			            				<span class="input-group-btn">
 			            					<button type="button" id="minus" class="btn btn-default btn-flat btn-lg"><i class="fa fa-minus"></i></button>
 			            				</span>
-							          	<input type="text" name="quantity" id="quantity" class="form-control input-lg" value="1">
-							            <span class="input-group-btn">
+										<input type="text" name="quantity" id="quantity" class="form-control input-lg" value="1">
+										<span class="input-group-btn">
 							                <button type="button" id="add" class="btn btn-default btn-flat btn-lg"><i class="fa fa-plus"></i>
 							                </button>
-							            </span>
+										</span>
+										
 							            <input type="hidden" value="<?php echo $product['prodid']; ?>" name="id">
-							        </div>
+									</div>
 			            			<button type="submit" class="btn btn-primary btn-lg btn-flat"><i class="fa fa-shopping-cart"></i> Añadir al Carrito</button>
 			            		</div>
 		            		</form>
@@ -77,7 +70,9 @@
 		            		<h1 class="page-header"><?php echo $product['prodname']; ?></h1>
 		            		<h3><b>&#36; <?php echo number_format($product['price'], 2); ?></b></h3>
 		            		<p><b>Categoría:</b> <a href="category.php?category=<?php echo $product['cat_slug']; ?>"><?php echo $product['catname']; ?></a></p>
-		            		<p><b>Descripción:</b></p>
+							<p><b>En inventario:  </b><?php echo $product['Pcantidad']; ?> </p>
+							<input type="hidden" name="cantidad "id="cantidad"  class="form-control input-lg" value="<?php echo $product['Pcantidad']; ?>">
+							<p><b>Descripción:</b></p>
 		            		<p><?php echo $product['description']; ?></p>
 		            	</div>
 		            </div>
@@ -99,7 +94,12 @@ $(function(){
 	$('#add').click(function(e){
 		e.preventDefault();
 		var quantity = $('#quantity').val();
-		quantity++;
+		var cantidad = $('#cantidad').val();
+		if(quantity != cantidad){
+			quantity++;
+		}
+		
+		$('#cantidad').val(cantidad);
 		$('#quantity').val(quantity);
 	});
 	$('#minus').click(function(e){

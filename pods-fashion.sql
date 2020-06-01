@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-05-2020 a las 23:21:02
+-- Tiempo de generación: 01-06-2020 a las 02:03:49
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.4
 
@@ -39,7 +39,8 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id`, `user_id`, `product_id`, `quantity`) VALUES
-(11, 3, 31, 1);
+(26, 9, 35, 5),
+(27, 9, 36, 10);
 
 -- --------------------------------------------------------
 
@@ -103,6 +104,7 @@ CREATE TABLE `products` (
   `description` text NOT NULL,
   `slug` varchar(200) NOT NULL,
   `price` double NOT NULL,
+  `Pquantity` int(10) DEFAULT NULL,
   `photo` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -110,18 +112,17 @@ CREATE TABLE `products` (
 -- Volcado de datos para la tabla `products`
 --
 
-INSERT INTO `products` (`id`, `category_id`, `name`, `description`, `slug`, `price`, `photo`) VALUES
-(30, 3, 'Blusa Amarre Blanco', '<p>Blusa de amarre color blanco</p>\r\n', 'blusa-amarre-blanco', 250000, 'blusa-amarilla-blanco.jpg'),
-(31, 3, 'Blusa Amarre Negra', '<p>Blusa de amarre&nbsp;color negra</p>\r\n', 'blusa-amarre-negra', 250000, 'blusa-amarrar-negra.jpg'),
-(32, 3, 'Blusa Amarre Azul', '<p>Blusa Amarre Azul</p>\r\n', 'blusa-amarre-azul', 200000, 'blusa-amarre-azul.jpg'),
-(33, 3, 'Blusa Basica Azul', 'Blusa Basica Azul', 'blusa-basica-azul', 220000, 'blusa-basica-azul.jpg'),
-(34, 4, 'Jean Dama Bebe', 'Jean Dama Bebe', 'jean-dama-bebe', 300000, 'jean-dama-bebe.png'),
-(35, 1, 'Reloj blanco', 'Reloj blanco', 'reloj-blanco', 75000, 'reloj-blanco.jpeg'),
-(36, 1, 'Reloj dorado', 'Reloj dorado', 'reloj-dorado', 90000, 'reloj-dorado.jpeg'),
-(37, 4, 'Most Wanted Blanco', 'Jean marca: Most Wanted \r\nColor. Blanco', 'most-wanted-blanco', 300000, 'most-wanted-blanco_1589578132.png'),
-(38, 5, 'Short Baca Negro', 'Short Baca Negro', 'short-baca-negro', 50000, 'short-baca-negro.jpg'),
-(39, 4, 'Most Wanted Correa', 'Most Wanted Correa', 'most-wanted-correa', 220000, 'most-wanted-correa.png'),
-(40, 5, 'Short Most Wanted Oscuro', 'Short de marca Most Wanted y color oscuro', 'short-most-wanted-oscuro', 75000, 'short-most-wanted-oscuro.jpg');
+INSERT INTO `products` (`id`, `category_id`, `name`, `description`, `slug`, `price`, `Pquantity`, `photo`) VALUES
+(30, 3, 'Blusa Amarre Blanco', 'Blusa Amarre Blanco', 'blusa-amarre-blanco', 250000, 6, 'blusa-amarilla-blanco.jpg'),
+(31, 3, 'Blusa Amarre Negra', '<p>Blusa de amarre&nbsp;color negra</p>\r\n', 'blusa-amarre-negra', 250000, 5, 'blusa-amarrar-negra.jpg'),
+(32, 3, 'Blusa Amarre Azul', '<p>Blusa Amarre Azul</p>\r\n', 'blusa-amarre-azul', 200000, 5, 'blusa-amarre-azul.jpg'),
+(33, 3, 'Blusa Basica Azul', 'Blusa Basica Azul', 'blusa-basica-azul', 220000, 5, 'blusa-basica-azul.jpg'),
+(34, 4, 'Jean Dama Bebe', 'Jean Dama Bebe', 'jean-dama-bebe', 300000, 5, 'jean-dama-bebe.png'),
+(35, 1, 'Reloj blanco', 'Reloj blanco', 'reloj-blanco', 75000, 5, 'reloj-blanco.jpeg'),
+(36, 1, 'Reloj dorado', 'Reloj dorado', 'reloj-dorado', 90000, 10, 'reloj-dorado.jpeg'),
+(37, 4, 'Most Wanted Blanco', 'Jean marca: Most Wanted \r\nColor. Blanco', 'most-wanted-blanco', 300000, 5, 'most-wanted-blanco_1589578132.png'),
+(38, 5, 'Short Baca Negro', 'Short Baca Negro', 'short-baca-negro', 50000, 5, 'short-baca-negro.jpg'),
+(39, 4, 'Most Wanted Correa', 'Most Wanted Correa', 'most-wanted-correa', 220000, 5, 'most-wanted-correa.png');
 
 -- --------------------------------------------------------
 
@@ -146,10 +147,10 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `email`, `password`, `name`, `lastname`, `address`, `city`, `rol`) VALUES
 (1, 'xjuanpaab@gmail.com', '$2y$10$mN6z4uRi5hQRErtv1AuN1Oef/r7FKKQ4GDyFUe.D32BC/yIKCJbIa', 'Juan Pablo', 'Acosta Bedoya', 'Calle 100B 23-16', 'Cali', 1),
-(2, 'DanielaLo@gmail.com', '$2y$10$jgi.AwQqAmNhEoisi4SPZerjNjoGrPYA/h6coGSf2VUkbFg8D/RDW', 'Daniela', 'Lozano Amaya', 'Calle 154A', 'Cali', 0),
-(6, 'diego@hotmail.com', '$2y$10$aAjnu.m1XNVzeVl15jhI7eXLxIqUBhXRhCw7Ud3u.bhdgkk.sTwB2', 'Diego', 'Ochoa Acosta', 'Calle 20C', 'Cali', 0),
-(7, 'diego@hotmail.com', '$2y$10$w76wDhinm5.tpIllMAPSXOOtM85YbgbVwTcV/VkerUV9Jgp1vF.KK', 'Diego', 'Ochoa Acosta', 'Calle 647A', 'Yumbo', 0),
-(8, 'a@a.com', '$2y$10$EdIvKkB5x4AAwl7Yi.eIA.XPtA4KQxkYSpKQh..kR3JGesze5re9a', 'Juan Pablo', 'Bedoya', 'Calle 100B 23-16', 'Cali', 0);
+(9, 'cliente1@gmail.com', '$2y$10$f4tXd9nmgxtDmoK64zQCHuFt.j1lloMgWXTCHWXBDdsr2hiYju.AS', 'Firulais', 'Gonzales', 'Calle 320B #43-17', 'Cali', 0),
+(10, 'diego.ochoa00@usc.edu.co', '$2y$10$DFdtvKr4BnCI39t3tlq6qOznxrd9ZxXqkjtC4H7GDycaf652zGjAK', 'Diego', 'Ochoa Acosta', 'Calle 64C #27-18', 'Cali', 1),
+(11, 'daniela.lozano00@usc.edu.co', '$2y$10$O/a1CTDEwdw1ZakQVOO.h.6RU00N9xG.11HLIb.tPBB1wSFOTf8mC', 'Daniela', 'Lozano Amaya', 'Calle 50A #10-16', 'Cali', 1),
+(12, 'cliente2@gmail.com', '$2y$10$NTkfUcPV5DKBCKPgO015..kHuY4Jwb3S6AuUC/lNuZ2y5JoMDkOny', 'Ricardo', 'Estrada Rodriguez', 'Calle 70D #25-17', 'Cali', 0);
 
 --
 -- Índices para tablas volcadas
@@ -193,7 +194,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de la tabla `category`
@@ -217,7 +218,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_user` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

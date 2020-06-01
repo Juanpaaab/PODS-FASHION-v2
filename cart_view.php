@@ -7,8 +7,6 @@
 	 
 	  <div class="content-wrapper">
 	    <div class="container">
-
-	      <!-- Main content -->
 	      <section class="content">
 	        <div class="row">
 	        	<div class="col-sm-9">
@@ -19,8 +17,9 @@
 		        			<thead>
 		        				<th></th>
 		        				<th>Foto</th>
-		        				<th>Nombre</th>
-		        				<th>Precio</th>
+								<th>Nombre</th>
+								<th>Inventario</th>
+		        				<th>Precio</th>	
 		        				<th width="20%">Cantidad</th>
 		        				<th>Subtotal</th>
 		        			</thead>	
@@ -32,7 +31,6 @@
 	        	</div>
 	        </div>
 	      </section>
-	     
 	    </div>
 	  </div>
   	<?php $pdo->close(); ?>
@@ -65,16 +63,21 @@ $(function(){
 		e.preventDefault();
 		var id = $(this).data('id');
 		var qty = $('#qty_'+id).val();
-		if(qty>1){
+		var qc = $('#qc_'+id).val();
+
+		if(qty > 1){
 			qty--;
 		}
 		$('#qty_'+id).val(qty);
+		$('#qc_'+id).val(qc);
+
 		$.ajax({
 			type: 'POST',
 			url: 'cart_update.php',
 			data: {
 				id: id,
 				qty: qty,
+				qc: qc,
 			},
 			dataType: 'json',
 			success: function(response){
@@ -89,16 +92,21 @@ $(function(){
 
 	$(document).on('click', '.add', function(e){
 		e.preventDefault();
+
 		var id = $(this).data('id');
 		var qty = $('#qty_'+id).val();
+		var qc = $('#qc_'+id).val();
 		qty++;
 		$('#qty_'+id).val(qty);
+		$('#qc_'+id).val(qc);
+
 		$.ajax({
 			type: 'POST',
 			url: 'cart_update.php',
 			data: {
 				id: id,
 				qty: qty,
+				qc: qc,
 			},
 			dataType: 'json',
 			success: function(response){

@@ -35,8 +35,10 @@
 						<td><button type='button' data-id='".$row['cartid']."' class='btn btn-danger btn-flat cart_delete'><i class='fa fa-remove'></i></button></td>
 						<td><img src='".$image."' width='30px' height='30px'></td>
 						<td>".$row['name']."</td>
+						<td>".$row['Pquantity']."</td>
 						<td>&#36; ".number_format($row['price'], 2)."</td>
 						<td class='input-group'>
+							<input type='hidden' id='qc_".$row['cartid']."' value='".$row['Pquantity']."'>
 							<span class='input-group-btn'>
             					<button type='button' id='minus' class='btn btn-default btn-flat minus' data-id='".$row['cartid']."'><i class='fa fa-minus'></i></button>
             				</span>
@@ -44,7 +46,8 @@
 				            <span class='input-group-btn'>
 				                <button type='button' id='add' class='btn btn-default btn-flat add' data-id='".$row['cartid']."'><i class='fa fa-plus'></i>
 				                </button>
-				            </span>
+							</span>
+							
 						</td>
 						<td>&#36; ".number_format($subtotal, 2)."</td>
 					</tr>
@@ -78,8 +81,11 @@
 						<td><button type='button' data-id='".$row['productid']."' class='btn btn-danger btn-flat cart_delete'><i class='fa fa-remove'></i></button></td>
 						<td><img src='".$image."' width='30px' height='30px'></td>
 						<td>".$product['name']."</td>
+						<td>".$product['Pquantity']."</td>
 						<td>&#36; ".number_format($product['price'], 2)."</td>
+						
 						<td class='input-group'>
+							<input type='hidden' id='qc_".$row['productid']."' value='".$product['Pquantity']."'>
 							<span class='input-group-btn'>
             					<button type='button' id='minus' class='btn btn-default btn-flat minus' data-id='".$row['productid']."'><i class='fa fa-minus'></i></button>
             				</span>
@@ -87,7 +93,8 @@
 				            <span class='input-group-btn'>
 				                <button type='button' id='add' class='btn btn-default btn-flat add' data-id='".$row['productid']."'><i class='fa fa-plus'></i>
 				                </button>
-				            </span>
+							</span>
+							
 						</td>
 						<td>&#36; ".number_format($subtotal, 2)."</td>
 					</tr>
@@ -106,7 +113,7 @@
 		else{
 			$output .= "
 				<tr>
-					<td colspan='6' align='center'>Shopping cart empty</td>
+					<td colspan='6' align='center'>Carrito de compras vacio</td>
 				<tr>
 			";
 		}

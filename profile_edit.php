@@ -24,7 +24,7 @@
 				$stmt = $conn->prepare("UPDATE users SET email=:email, password=:password, name=:name, lastname=:lastname, address=:address, city=:city WHERE id_user=:id_user");
 				$stmt->execute(['email'=>$email, 'password'=>$password, 'name'=>$name, 'lastname'=>$lastname, 'address'=>$address, 'city'=>$city,'id_user'=>$user['id_user']]);
 
-				$_SESSION['success'] = 'Account updated successfully';
+				$_SESSION['success'] = 'Cuenta actualizada';
 			}
 			catch(PDOException $e){
 				$_SESSION['error'] = $e->getMessage();
