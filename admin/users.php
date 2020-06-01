@@ -58,7 +58,7 @@
                       $stmt = $conn->prepare("SELECT * FROM users WHERE rol=:rol");
                       $stmt->execute(['rol'=> 0]);
                       foreach($stmt as $row){
-                        $image = (!empty($row['photo'])) ? '../images/'.$row['photo'] : '../images/profile.jpg';
+                        $image = (!empty($row['photo'])) ? '../images/'.$row['photo'] : '../images/profile.png';
                         echo "
                           <tr>
                             <td>
@@ -68,8 +68,8 @@
                             <td>".$row['name'].' '.$row['lastname']."</td>
                             <td>
                               <a href='cart.php?user=".$row['id_user']."' class='btn btn-info btn-sm btn-flat'><i class='fa fa-search'></i> Carrito</a>
-                              <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id_user']."'><i class='fa fa-edit'></i> Editar</button>
-                              <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id_user']."'><i class='fa fa-trash'></i> Eliminar</button>
+                              <button class='btn btn-success btn-sm edit btn-flat' data-id_user='".$row['id_user']."'><i class='fa fa-edit'></i> Editar</button>
+                              <button class='btn btn-danger btn-sm delete btn-flat' data-id_user='".$row['id_user']."'><i class='fa fa-trash'></i> Eliminar</button>
                             </td>
                           </tr>
                         ";
@@ -102,32 +102,32 @@ $(function(){
     e.preventDefault();
     $('#edit').modal('show');
     var id_user = $(this).data('id_user');
-    getRow(id);
+    getRow(id_user);
   });
 
   $(document).on('click', '.delete', function(e){
     e.preventDefault();
     $('#delete').modal('show');
-    var id = $(this).data('id_user');
-    getRow(id);
+    var id_user = $(this).data('id_user');
+    getRow(id_user);
   });
 });
 
-function getRow(id){
+function getRow(id_user){
   $.ajax({
     type: 'POST',
     url: 'users_row.php',
-    data: {id:id},
+    data: {id_user:id_user},
     dataType: 'json',
     success: function(response){
-      $('.id_user').val(response.id);
+      $('.id_user').val(response.id_user);
       $('#edit_email').val(response.email);
       $('#edit_password').val(response.password);
-      $('#edit_nombre').val(response.Nombre);
-      $('#edit_apellidos').val(response.Apellidos);
-      $('#edit_direccion').val(response.Direccion);
-      $('#edit_ciudad').val(response.Ciudad);
-      $('.fullname').html(response.Nombre+' '+response.Apellidos);
+      $('#edit_name').val(response.name);
+      $('#edit_lastname').val(response.lastname);
+      $('#edit_address').val(response.address);
+      $('#edit_city').val(response.city);
+      $('.fullname').html(response.name+' '+response.lastname);
     }
   });
 }

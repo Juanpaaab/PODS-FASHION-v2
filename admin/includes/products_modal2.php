@@ -34,32 +34,39 @@
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="products_edit.php">
                 <input type="hidden" class="prodid" name="id">
+
                 <div class="form-group">
                   <label for="edit_name" class="col-sm-1 control-label">Nombre</label>
-
                   <div class="col-sm-5">
                     <input type="text" class="form-control" id="edit_name" name="name">
                   </div>
 
                   <label for="edit_category" class="col-sm-1 control-label">Categoría</label>
-
                   <div class="col-sm-5">
                     <select class="form-control" id="edit_category" name="category">
                       <option selected id="catselected"></option>
                     </select>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="edit_price" class="col-sm-1 control-label">Precio</label>
 
+                  </div>
+                  </div>
+
+                  <div class="form-group">
+                  <label for="edit_price" class="col-sm-1 control-label">Precio</label>
                   <div class="col-sm-5">
                     <input type="text" class="form-control" id="edit_price" name="price">
                   </div>
-                </div>
+
+                  <label for="edit_quantity" class="col-sm-1 control-label">Inventario</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="edit_Pquantity" name="Pquantity">
+                  </div>
+
+                  </div>
+
                 <p><b>Descripción</b></p>
                 <div class="form-group">
                   <div class="col-sm-12">
-                    <textarea id="editor" name="description" rows="10" cols="130"></textarea>
+                    <textarea id="edit_description" name="description" rows="10" cols="120"></textarea>
                   </div>
                   
                 </div>

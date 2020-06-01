@@ -8,13 +8,14 @@
 		$slug = slugify($name);
 		$category = $_POST['category'];
 		$price = $_POST['price'];
+		$Pquantity = $_POST['Pquantity'];
 		$description = $_POST['description'];
 
 		$conn = $pdo->open();
 
 		try{
-			$stmt = $conn->prepare("UPDATE products SET name=:name, slug=:slug, category_id=:category, price=:price, description=:description WHERE id=:id");
-			$stmt->execute(['name'=>$name, 'slug'=>$slug, 'category'=>$category, 'price'=>$price, 'description'=>$description, 'id'=>$id]);
+			$stmt = $conn->prepare("UPDATE products SET name=:name, slug=:slug, category_id=:category, price=:price, Pquantity=:Pquantity, description=:description WHERE id=:id");
+			$stmt->execute(['name'=>$name, 'slug'=>$slug, 'category'=>$category, 'price'=>$price, 'Pquantity'=>$Pquantity, 'description'=>$description, 'id'=>$id]);
 			$_SESSION['success'] = 'Producto actualizado correctamente';
 		}
 		catch(PDOException $e){

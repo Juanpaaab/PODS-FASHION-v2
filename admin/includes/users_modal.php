@@ -78,6 +78,7 @@
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="users_edit.php">
                 <input type="hidden" class="id_user" name="id_user">
+
                 <div class="form-group">
                     <label for="edit_email" class="col-sm-3 control-label">Email</label>
 
@@ -107,7 +108,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_address" class="col-sm-3 control-label">direccion</label>
+                    <label for="edit_address" class="col-sm-3 control-label">Direccion</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="edit_address" name="address">

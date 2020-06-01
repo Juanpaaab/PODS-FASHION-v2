@@ -38,7 +38,7 @@
 
                   <div class="col-sm-5">
                     <select class="form-control" id="category" name="category" required>
-                      <option value="" selected>- Select -</option>
+                      <option value="" selected> Seleccionar </option>
                     </select>
                   </div>
                 </div>
@@ -49,9 +49,15 @@
                     <input type="text" class="form-control" id="price" name="price" required>
                   </div>
 
-                  <label for="photo" class="col-sm-1 control-label">Foto</label>
+                  <label for="quantity" class="col-sm-1 control-label">Inventario</label>
 
                   <div class="col-sm-5">
+                    <input type="text" class="form-control" id="quantity" name="quantity" required>
+                  </div>
+
+                  <label for="photo" class="col-sm-1 control-label" style="margin-top:15px">Foto</label>
+
+                  <div class="col-sm-5" style="margin-top:20px">
                     <input type="file" id="photo" name="photo">
                   </div>
                 </div>

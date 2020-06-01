@@ -82,6 +82,7 @@
                   <th>Foto</th>
                   <th>Descripción</th>
                   <th>Precio</th>
+                  <th>Inventario</th>
                   <th>Administrar</th>
                 </thead>
                 <tbody>
@@ -103,6 +104,7 @@
                             </td>
                             <td><a href='#description' data-toggle='modal' class='btn btn-info btn-sm btn-flat desc' data-id='".$row['id']."'><i class='fa fa-search'></i> Ver</a></td>
                             <td>&#36; ".number_format($row['price'], 2)."</td>
+                            <td>".number_format($row['Pquantity'], 0)."</td>
                             <td>
                               <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Editar</button>
                               <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Eliminar</button>
@@ -199,7 +201,8 @@ function getRow(id){
       $('#edit_name').val(response.prodname);
       $('#catselected').val(response.category_id).html(response.catname);
       $('#edit_price').val(response.price);
-      CKEDITOR.instances["editor2"].setData(response.description);
+      $('#edit_Pquantity').val(response.Pquantity);
+      $('#edit_description').val(response.description);
       getCategory();
     }
   });

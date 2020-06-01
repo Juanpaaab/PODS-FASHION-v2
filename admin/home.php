@@ -2,15 +2,6 @@
   include 'includes/session.php';
   include 'includes/format.php'; 
 ?>
-<?php 
-  $today = date('Y-m-d');
-  $year = date('Y');
-  if(isset($_GET['year'])){
-    $year = $_GET['year'];
-  }
-
-  $conn = $pdo->open();
-?>
 <?php include 'includes/header.php'; ?>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">

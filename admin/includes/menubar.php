@@ -2,10 +2,10 @@
   <section class="sidebar"  style="background-color: deeppink">
     <div class="user-panel" >
       <div class="pull-left image">
-        <img src="<?php echo (!empty($admin['photo'])) ? '../images/'.$admin['photo'] : '../images/profile.jpg'; ?>" class="img-circle" alt="User Image">
+        <img src="<?php echo (!empty($admin['photo'])) ? '../images/'.$admin['photo'] : '../images/profile.png'; ?>" class="img-circle" alt="User Image">
       </div>
       <div class="pull-left info">
-        <p><?php echo $admin['name'].' '.$admin['lastname']; ?></p>
+        <p><?php echo $admin['name'].' '.$admin['lastname']; ?></p> 
         <a><i class="fa fa-circle text-success"></i> En línea</a>
       </div>
     </div>
