@@ -13,8 +13,8 @@
 		$curr_password = $_POST['curr_password'];
 		$email = $_POST['email'];
 		$password = $_POST['password'];
-		$nombre = $_POST['Nombre'];
-		$apellidos = $_POST['Apellidos'];
+		$name = $_POST['name'];
+		$lastname = $_POST['lastname'];
 		if(password_verify($curr_password, $admin['password'])){
 			if(!empty($photo)){
 				move_uploaded_file($_FILES['photo']['tmp_name'], '../images/'.$photo);
@@ -34,8 +34,8 @@
 			$conn = $pdo->open();
 
 			try{
-				$stmt = $conn->prepare("UPDATE usuarios SET email=:email, password=:password, Nombre=:Nombre, Apellidos=:Apellidos WHERE id_user=:id_user");
-				$stmt->execute(['email'=>$email, 'password'=>$password, 'Nombre'=>$nombre, 'Apellidos'=>$apellidos, 'id_user'=>$admin['id_user']]);
+				$stmt = $conn->prepare("UPDATE users SET email=:email, password=:password, name=:name, lastname=:lastname WHERE id_user=:id_user");
+				$stmt->execute(['email'=>$email, 'password'=>$password, 'name'=>$name, 'lastname'=>$lastname, 'id_user'=>$admin['id_user']]);
 
 				$_SESSION['success'] = 'Cuenta actualizada correctamente';
 			}
