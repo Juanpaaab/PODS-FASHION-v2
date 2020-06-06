@@ -49,10 +49,10 @@
                     <input type="text" class="form-control" id="price" name="price" required>
                   </div>
 
-                  <label for="quantity" class="col-sm-1 control-label">Inventario</label>
+                  <label for="Pquantity" class="col-sm-1 control-label">Inventario</label>
 
                   <div class="col-sm-5">
-                    <input type="text" class="form-control" id="quantity" name="quantity" required>
+                    <input type="text" class="form-control" id="Pquantity" name="Pquantity" required>
                   </div>
 
                   <label for="photo" class="col-sm-1 control-label" style="margin-top:15px">Foto</label>
