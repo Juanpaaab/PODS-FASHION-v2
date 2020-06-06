@@ -5,10 +5,10 @@
 
 	<?php include 'includes/navbar.php'; ?>
 	 
-	  <div class="content-wrapper">
-	    <div class="container">
+	  <div class="content-wrapper" >
+	    <div class="container" style="margin-left: 200px">
 
-	      <section class="content">
+	      <section class="content" >
 	        <div class="row">
 	        	<div class="col-sm-9">
 	            <?php
