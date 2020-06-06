@@ -1,38 +1,3 @@
-<div class="modal fade" id="transaction">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Detalles de transacciones</b></h4>
-            </div>
-            <div class="modal-body">
-              <p>
-                Fecha: <span id="date"></span>
-                <span class="pull-right">Transaccion#: <span id="transid"></span></span> 
-              </p>
-              <table class="table table-bordered">
-                <thead>
-                  <th>Producto</th>
-                  <th>Precio</th>
-                  <th>Cantidad</th>
-                  <th>Subtotal</th>
-                </thead>
-                <tbody id="detail">
-                  <tr>
-                    <td colspan="3" align="right"><b>Total</b></td>
-                    <td><span id="total"></span></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="modal fade" id="edit">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -90,7 +55,7 @@
                     <label for="curr_password" class="col-sm-3 control-label">Contraseña actual</label>
 
                     <div class="col-sm-9">
-                      <input type="password" class="form-control" id="curr_password" name="curr_password" placeholder="input current password to save changes" required>
+                      <input type="password" class="form-control" id="curr_password" name="curr_password" placeholder="Ingresa contraseña para guardar cambios" required>
                     </div>
                 </div>
             </div>
