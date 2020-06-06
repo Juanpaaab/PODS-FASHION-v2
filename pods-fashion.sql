@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-06-2020 a las 02:03:49
+-- Tiempo de generación: 06-06-2020 a las 19:26:59
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.4
 
@@ -39,8 +39,9 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id`, `user_id`, `product_id`, `quantity`) VALUES
-(26, 9, 35, 5),
-(27, 9, 36, 10);
+(26, 9, 35, 4),
+(27, 9, 36, 1),
+(28, 9, 38, 4);
 
 -- --------------------------------------------------------
 
@@ -65,31 +66,6 @@ INSERT INTO `category` (`id`, `name`, `cat_slug`) VALUES
 (4, 'Jeans', 'jeans'),
 (5, 'Shorts', 'shorts'),
 (6, 'Vestidos', '');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `details`
---
-
-CREATE TABLE `details` (
-  `id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  `quantity` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `details`
---
-
-INSERT INTO `details` (`id`, `product_id`, `quantity`) VALUES
-(14, 11, 2),
-(15, 13, 5),
-(16, 3, 2),
-(17, 1, 3),
-(18, 13, 3),
-(19, 2, 4),
-(20, 19, 5);
 
 -- --------------------------------------------------------
 
@@ -146,7 +122,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `email`, `password`, `name`, `lastname`, `address`, `city`, `rol`) VALUES
-(1, 'xjuanpaab@gmail.com', '$2y$10$mN6z4uRi5hQRErtv1AuN1Oef/r7FKKQ4GDyFUe.D32BC/yIKCJbIa', 'Juan Pablo', 'Acosta Bedoya', 'Calle 100B 23-16', 'Cali', 1),
+(1, 'juan.acosta02@usc.edu.co', '$2y$10$mN6z4uRi5hQRErtv1AuN1Oef/r7FKKQ4GDyFUe.D32BC/yIKCJbIa', 'Juan Pablo', 'Acosta Bedoya', 'Calle 100B 23-16', 'Cali', 1),
 (9, 'cliente1@gmail.com', '$2y$10$f4tXd9nmgxtDmoK64zQCHuFt.j1lloMgWXTCHWXBDdsr2hiYju.AS', 'Firulais', 'Gonzales', 'Calle 320B #43-17', 'Cali', 0),
 (10, 'diego.ochoa00@usc.edu.co', '$2y$10$DFdtvKr4BnCI39t3tlq6qOznxrd9ZxXqkjtC4H7GDycaf652zGjAK', 'Diego', 'Ochoa Acosta', 'Calle 64C #27-18', 'Cali', 1),
 (11, 'daniela.lozano00@usc.edu.co', '$2y$10$O/a1CTDEwdw1ZakQVOO.h.6RU00N9xG.11HLIb.tPBB1wSFOTf8mC', 'Daniela', 'Lozano Amaya', 'Calle 50A #10-16', 'Cali', 1),
@@ -169,12 +145,6 @@ ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `details`
---
-ALTER TABLE `details`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indices de la tabla `products`
 --
 ALTER TABLE `products`
@@ -194,19 +164,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de la tabla `category`
 --
 ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
-
---
--- AUTO_INCREMENT de la tabla `details`
---
-ALTER TABLE `details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `products`
