@@ -18,7 +18,7 @@
 			try{
 				$stmt = $conn->prepare("INSERT INTO category (name) VALUES (:name)");
 				$stmt->execute(['name'=>$name]);
-				$_SESSION['success'] = 'Category added successfully';
+				$_SESSION['success'] = 'Categoria añadida correctamente';
 			}
 			catch(PDOException $e){
 				$_SESSION['error'] = $e->getMessage();
@@ -28,7 +28,7 @@
 		$pdo->close();
 	}
 	else{
-		$_SESSION['error'] = 'Fill up category form first';
+		$_SESSION['error'] = 'Llena el formulario primero';
 	}
 
 	header('location: category.php');
