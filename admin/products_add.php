@@ -32,7 +32,7 @@
 
 			try{
 				$stmt = $conn->prepare("INSERT INTO products (category_id, name, description, slug, price, Pquantity, photo) VALUES (:category, :name, :description, :slug, :price, :Pquantity, :photo)");
-				$stmt->execute(['category'=>$category, 'name'=>$name, 'description'=>$description, 'slug'=>$slug, 'price'=>$price, 'Pquantity'=>$quantity, 'photo'=>$new_filename]);
+				$stmt->execute(['category'=>$category, 'name'=>$name, 'description'=>$description, 'slug'=>$slug, 'price'=>$price, 'Pquantity'=>$Pquantity, 'photo'=>$new_filename]);
 				$_SESSION['success'] = 'Producto añadido correctamente';
 
 			}
