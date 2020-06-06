@@ -22,7 +22,7 @@
 	       				echo '<h1 class="page-header">No results found for <i>'.$_POST['keyword'].'</i></h1>';
 	       			}
 	       			else{
-	       				echo '<h1 class="page-header">Search results for <i>'.$_POST['keyword'].'</i></h1>';
+	       				echo '<h1 class="page-header">Busquedas para el producto: <i>'.$_POST['keyword'].'</i></h1>';
 		       			try{
 		       			 	$inc = 3;	
 						    $stmt = $conn->prepare("SELECT * FROM products WHERE name LIKE :keyword");
@@ -60,9 +60,6 @@
 					$pdo->close();
 
 	       		?> 
-	        	</div>
-	        	<div class="col-sm-3">
-	        		<?php include 'includes/sidebar.php'; ?>
 	        	</div>
 	        </div>
 	      </section>
