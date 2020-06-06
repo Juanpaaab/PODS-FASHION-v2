@@ -8,7 +8,6 @@
 	  <div class="content-wrapper">
 	    <div class="container">
 
-	      <!-- Main content -->
 	      <section class="content" style="margin-left: 20%">
 	        <div class="row">
 	        	<div class="col-sm-9">
